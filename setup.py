@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 project_slug = "webhook-actions"
-module_name = project_slug.replace('-', "_")
+module_name = project_slug.replace("-", "_")
 
 setup(
     name=project_slug,
@@ -17,10 +17,11 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
-    entry_points={"console_scripts": [f"{project_slug}={module_name}.__main__:main"]},install_requires=[],
+    entry_points={"console_scripts": [f"{project_slug}={module_name}.__main__:main"]},
+    install_requires=[],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
-        "Licence :: OSI Approved :: MIT Licence",
+        "Licence :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
     ],
