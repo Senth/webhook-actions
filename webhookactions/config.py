@@ -13,11 +13,6 @@ class Config:
 
         self._add_args_settings()
 
-    def _parse_args(self):
-        """Parse arguments from command line"""
-        args = get_args()
-        self._add_args_settings()
-
     def _add_args_settings(self):
         """Set additional configuration from script arguments"""
         args = get_args()
