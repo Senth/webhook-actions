@@ -1,4 +1,4 @@
-from .arg_parser import get_args
+from .utils.arg_parser import get_args
 
 _app_name = "webhook-actions"
 
