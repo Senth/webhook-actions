@@ -18,7 +18,9 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     entry_points={"console_scripts": [f"{project_slug}={module_name}.__main__:main"]},
-    install_requires=[],
+    install_requires=[
+        "flask",
+    ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Licence :: OSI Approved :: MIT License",
