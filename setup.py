@@ -22,6 +22,7 @@ setup(
     data_files=[(f"config", [f"config/.{project_slug}.cfg"])],
     install_requires=[
         "flask",
+        "flask-classful",
         "configparser",
     ],
     classifiers=[

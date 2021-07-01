@@ -14,7 +14,7 @@ class Config:
         self.verbose: bool = False
         self.port: int = 5000
 
-    def add_args_settings(self, args):
+    def set_args_settings(self, args):
         """Set additional configuration from script arguments"""
         self.verbose = args.verbose
         self.debug = args.debug
