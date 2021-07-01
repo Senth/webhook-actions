@@ -1,5 +1,3 @@
-from flask.app import Flask
-
 from .adapters.app_impl import AppImpl
 from .config import config
 from .gateways.flask_gateway import FlaskGateway
