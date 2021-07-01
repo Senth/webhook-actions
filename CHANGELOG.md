@@ -8,3 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Upcoming
 
 ### Added
+
+- Can run scripts from the `~/webhook-actions/` dir
+- Change port in `~/.webhook-actions.cfg`
