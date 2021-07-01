@@ -1,9 +1,9 @@
-from pathlib import Path
+from ...core.entities.action import Action
 
 
 class RunRepo:
-    def run(self, script: Path, arg: str) -> bool:
+    def run(self, action: Action) -> bool:
         raise NotImplementedError()
 
-    def exists(self, file: Path) -> bool:
+    def exists(self, action: Action) -> bool:
         raise NotImplementedError()
