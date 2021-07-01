@@ -18,8 +18,11 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     entry_points={"console_scripts": [f"{project_slug}={module_name}.__main__:main"]},
+    include_package_data=True,
+    data_files=[(f"config", [f"config/.{project_slug}.cfg"])],
     install_requires=[
         "flask",
+        "configparser",
     ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",

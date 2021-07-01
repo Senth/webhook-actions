@@ -8,6 +8,17 @@
 
 Webhook that runs scripts depending on the name
 
+## Example config file
+
+The config file is located at `~/.webhook-actions.cgf`.
+When you run the script the first time it will create a default configuration.
+
+```ini
+[General]
+# Port to listen to
+Port = 5000
+```
+
 ## Authors
 
 - Matteus Magnusson, senth.wallace@gmail.com
