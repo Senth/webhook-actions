@@ -4,7 +4,7 @@ from ...core.entities.action import Action
 from .run_repo import RunRepo
 
 
-class Output(Enum):
+class RunOutput(Enum):
     success = 1
     fail = 2
     not_found = 3
@@ -14,12 +14,12 @@ class Run:
     def __init__(self, repo: RunRepo) -> None:
         self.repo = repo
 
-    def execute(self, action: Action) -> Output:
+    def execute(self, action: Action) -> RunOutput:
         if not self.repo.exists(action):
-            return Output.not_found
+            return RunOutput.not_found
 
         success = self.repo.run(action)
         if not success:
-            return Output.fail
+            return RunOutput.fail
 
-        return Output.success
+        return RunOutput.success

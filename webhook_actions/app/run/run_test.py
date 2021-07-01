@@ -2,7 +2,7 @@ import pytest
 from mockito import mock, unstub, verifyStubbedInvocationsAreUsed, when
 
 from ...core.entities.action import Action
-from .run import Output, Run
+from .run import RunOutput, Run
 from .run_repo import RunRepo
 
 
@@ -23,7 +23,7 @@ def test_run_successful(mock_repo, action):
     run = Run(mock_repo)
     output = run.execute(action)
 
-    assert output == Output.success
+    assert output == RunOutput.success
 
     verifyStubbedInvocationsAreUsed()
     unstub()
@@ -36,7 +36,7 @@ def test_run_failed(mock_repo, action):
     run = Run(mock_repo)
     output = run.execute(action)
 
-    assert output == Output.fail
+    assert output == RunOutput.fail
 
     verifyStubbedInvocationsAreUsed()
     unstub()
@@ -48,7 +48,7 @@ def test_run_script_not_found(mock_repo, action):
     run = Run(mock_repo)
     output = run.execute(action)
 
-    assert output == Output.not_found
+    assert output == RunOutput.not_found
 
     verifyStubbedInvocationsAreUsed()
     unstub()
