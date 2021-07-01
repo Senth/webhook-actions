@@ -1,6 +1,5 @@
 from enum import Enum
 
-from ...config import config
 from ...core.entities.action import Action
 from .run_repo import RunRepo
 
@@ -16,13 +15,10 @@ class Run:
         self.repo = repo
 
     def execute(self, action: Action) -> Output:
-        relative = action.path.split("/")
-        script_path = config.webhook_dir.joinpath(*relative)
-
-        if not self.repo.exists(script_path):
+        if not self.repo.exists(action):
             return Output.not_found
 
-        success = self.repo.run(script_path, action.data)
+        success = self.repo.run(action)
         if not success:
             return Output.fail
 
