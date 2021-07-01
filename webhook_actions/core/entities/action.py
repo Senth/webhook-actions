@@ -2,15 +2,14 @@ from typing import Any, Dict
 
 
 class Action:
-    def __init__(self, name: str, trigger: str, data: Dict[str, Any]) -> None:
-        self.name = name
-        self.trigger = trigger
+    def __init__(self, path: str, data: str) -> None:
+        self.path = path
         self.data = data
 
     def __members(self):
         return [
-            self.name,
-            self.trigger,
+            self.path,
+            self.data,
         ]
 
     def test(self):

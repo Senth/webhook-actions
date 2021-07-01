@@ -1,4 +1,4 @@
-from .utils.arg_parser import get_args
+from pathlib import Path
 
 _app_name = "webhook-actions"
 
@@ -8,14 +8,12 @@ class Config:
 
         # Default values
         self.app_name: str = _app_name
-        self.debug: bool
-        self.verbose: bool
+        self.webhook_dir = Path("~/webhook-actions").expanduser()
+        self.debug: bool = False
+        self.verbose: bool = False
 
-        self._add_args_settings()
-
-    def _add_args_settings(self):
+    def add_args_settings(self, args):
         """Set additional configuration from script arguments"""
-        args = get_args()
         self.verbose = args.verbose
         self.debug = args.debug
 
