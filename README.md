@@ -6,7 +6,24 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Senth/webhook-actions.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Senth/webhook-actions/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Senth/webhook-actions.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Senth/webhook-actions/context:python)
 
-Webhook that runs scripts depending on the name
+Webhook that runs scripts located in `~/webhook-actions/` directory.
+
+## How To Use
+
+1. Add scripts into webhook-actions. These can be in sub-directories
+1. Call the URL `http://localhost:5000/your-script-name`
+
+### Simple example
+
+- **URL:** `http://localhost:5000/log-stat`
+- **Body:** something
+- **Command:** `~/webhook-actions/log-stat something`
+
+### Example with subdirectories
+
+- **URL:** `https://YOUR_DOMAIM.com/git/your-project/deploy`
+- **Body:** {"tag": "1.0.1"}
+- **Command:** `~/webhook-actions/git/your-project/deploy "{\"tag\": \"1.0.1\"}"`
 
 ## Example config file
 
