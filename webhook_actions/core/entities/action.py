@@ -1,16 +1,13 @@
-from typing import Any, Dict
-
-
 class Action:
     def __init__(self, path: str, data: str) -> None:
         self.path = path
         self.data = data
 
     def __members(self):
-        return [
+        return (
             self.path,
             self.data,
-        ]
+        )
 
     def test(self):
         return self.__members()
