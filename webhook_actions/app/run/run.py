@@ -1,4 +1,7 @@
 from enum import Enum
+from threading import Thread
+
+from tealprint import TealPrint
 
 from ...core.entities.action import Action
 from .run_repo import RunRepo
@@ -18,8 +21,12 @@ class Run:
         if not self.repo.exists(action):
             return RunOutput.not_found
 
-        success = self.repo.run(action)
-        if not success:
-            return RunOutput.fail
+        # Run in background
+        Thread(target=self.run_in_background, args=[action]).start()
 
         return RunOutput.success
+
+    def run_in_background(self, action: Action) -> None:
+        success = self.repo.run(action)
+        if not success:
+            TealPrint.warning(f"Action faild: {action}")

@@ -21,9 +21,10 @@ setup(
     include_package_data=True,
     data_files=[(f"config", [f"config/.{project_slug}.cfg"])],
     install_requires=[
-        "flask",
+        "blulib==0.1.0",
         "flask-classful",
-        "configparser",
+        "flask",
+        "tealprint==0.1.0",
     ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",

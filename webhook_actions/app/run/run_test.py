@@ -1,8 +1,9 @@
 import pytest
 from mockito import mock, unstub, verifyStubbedInvocationsAreUsed, when
+from tealprint import TealPrint
 
 from ...core.entities.action import Action
-from .run import RunOutput, Run
+from .run import Run, RunOutput
 from .run_repo import RunRepo
 
 
@@ -32,11 +33,12 @@ def test_run_successful(mock_repo, action):
 def test_run_failed(mock_repo, action):
     when(mock_repo).exists(...).thenReturn(True)
     when(mock_repo).run(...).thenReturn(False)
+    when(TealPrint).warning(...)
 
     run = Run(mock_repo)
     output = run.execute(action)
 
-    assert output == RunOutput.fail
+    assert output == RunOutput.success
 
     verifyStubbedInvocationsAreUsed()
     unstub()

@@ -19,3 +19,9 @@ class Action:
 
     def __hash__(self) -> int:
         return hash(self.__members())
+
+    def __repr__(self) -> str:
+        return str(self.__members())
+
+    def __str__(self) -> str:
+        return self.__repr__()
