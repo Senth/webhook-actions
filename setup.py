@@ -21,7 +21,7 @@ setup(
     include_package_data=True,
     data_files=[(f"config", [f"config/.{project_slug}.cfg"])],
     install_requires=[
-        "blulib==0.1.0",
+        "blulib==0.1.2",
         "flask-classful",
         "flask",
         "tealprint==0.1.0",
