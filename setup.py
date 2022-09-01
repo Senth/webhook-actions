@@ -24,7 +24,7 @@ setup(
         "blulib==0.1.2",
         "flask-classful",
         "flask",
-        "tealprint==0.1.0",
+        "tealprint==0.3.0",
     ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
